@@ -8,13 +8,20 @@
 
 void homework()
 {
-	double x = 3.251;
-	double y = 0.325;
-	double z = 0.466 * pow(10, -4);
+    double x, y, z;
 
-	double c = pow(2, pow(y, x)) + pow(pow(3, x), y) - (y * (atan(z) - M_PI / 6)) / (fabs(x) + (1 / (pow(y, 2) + 1)));
-	puts("При x = 3.251, y = 0.325, z = 0.466*10^-4");
-	printf("Значение c равно: %lf", c);
+    x = 3.251;
+    y = 0.325;
+    z = 0.466e-4;
+
+    double term1 = pow(2, pow(y, x));
+    double term2 = pow(pow(3, x), y);
+    double numerator = y * (atan(z) - M_PI / 6);
+    double denominator = fabs(x) + 1.0 / (y * y + 1);
+
+    double c = term1 + term2 - (numerator / denominator);
+    printf("\n");
+    printf("При x = %.3f, y = %.3f, z = %.2le \nзначение выражения c = %f", x, y, z, c);
 }
 
 void main()
