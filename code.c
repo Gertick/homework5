@@ -20,8 +20,7 @@ void homework()
     double denominator = fabs(x) + 1.0 / (y * y + 1);
 
     double c = term1 + term2 - (numerator / denominator);
-    printf("\n");
-    printf("При x = %.3f, y = %.3f, z = %.2le \nзначение выражения c = %f", x, y, z, c);
+    printf("При x = %.3f, y = %.3f, z = %.2le \nЗначение выражения c = %f", x, y, z, c);
 }
 
 void main()
