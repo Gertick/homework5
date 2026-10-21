@@ -1,10 +1,8 @@
-### ***Домашнее задание к работе 5***
+### ***Домашнее задание к работе 2***
 ---
 ## ***Условие задачи***
 
-Вычислить значение выражения: $c = 2^{y^x} + (3^x)^y - \frac{y \cdot (\operatorname{arctg} z - \pi / 6)}{|x| + \frac{1}{y^2 + 1}}$.
-
-При $x = 3.251$, $y = 0.325$, $z = 0.466 \times 10^{-4}$.
+Вычислить значение выражения c = 2^(y^x) + (3^x)^y - (y * (arctg(z) - pi / 6)) / (|x| + 1 / (y^2 + 1)), если ==x== = 3.251, ==y== = 0.325, ==z== = 0.466 * 10^(-4).
 
 ## ***1. Алгоритм и блок-схема***
 
@@ -15,9 +13,9 @@
         ==x== = 3.251;
         ==y== = 0.325;
         ==z== = 0.466e-4;
-    3. Вычислить первую часть выражения ($2^{y^x}$):
+    3. Вычислить первую часть выражения:
         term1 = pow(2, pow(y, x));
-    4. Вычислить вторую часть выражения ($(3^x)^y$):
+    4. Вычислить вторую часть выражения:
         term2 = pow(pow(3, x), y);
     5. Вычислить числитель дроби:
         numerator = y * (atan(z) - M_PI / 6);
@@ -36,12 +34,9 @@
 ## 2. ***Реализация программы***
 
 ```c
-#include <stdio.h>
-#include <math.h>
-
 void homework()
 {
-    double x, y, z, c;
+    double x, y, z;
 
     x = 3.251;
     y = 0.325;
@@ -49,12 +44,10 @@ void homework()
 
     double term1 = pow(2, pow(y, x));
     double term2 = pow(pow(3, x), y);
-    
     double numerator = y * (atan(z) - M_PI / 6);
     double denominator = fabs(x) + 1.0 / (y * y + 1);
 
-    c = term1 + term2 - (numerator / denominator);
-    
+    double c = term1 + term2 - (numerator / denominator);
     printf("\n");
     printf("При x = %.3f, y = %.3f, z = %.2le значение выражения c = %f", x, y, z, c);
 }
